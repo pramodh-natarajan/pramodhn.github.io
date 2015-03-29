@@ -11,6 +11,16 @@
        font-family: "Segoe UI";
        font-style: italic;
     }
+    .btn-style
+    {
+      border : solid 2px #000000;
+      border-radius : 3px;
+      moz-border-radius : 3px;
+      font-size : 20px;
+      color : #ffffff;
+      padding : 1px 17px;
+      background-color : #4b98ab;
+    }
   </style>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
@@ -56,6 +66,9 @@
     </select> 
   </div>
     </td>
+    <td>
+      <button class="btn-style" id="pauseButton">Pause</button>
+    </td>    
   </tr>
 </table>
 <svg align="center" id="mySvg" width="5" height="5">
