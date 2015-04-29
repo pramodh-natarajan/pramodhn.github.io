@@ -1,6 +1,6 @@
 
   // Open the file
-  d3.csv("http://pramodhn.github.io/top3-updated.csv", function(error, data) {
+  d3.csv("http://pramodhn.github.io/DataVizAssign/top3-updated.csv", function(error, data) {
     data.forEach(function(d) {
   });
 
