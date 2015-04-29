@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <title>DataViz Homepage</title>
+    <style>
+        text {
+            font: 10px sans-serif;
+            color: black;
+        }
+
+        #indexBubbles {
+            width: 500px;
+            height: 500px;
+            border: dashed 1px black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        .footer {
+            padding-top: 50px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">YelpFoodie</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+<h2 align="center">Select 3 attributes</h2><p align="center">We will use these attributes to personalize your recommendations</p>
+<div id="indexBubbles" align="center">
+    <script src="javascripts/indexBubbles.js"></script>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted" align="center"><img src="http://coinbrief.net/wp-content/uploads/2014/05/yelp-icon-png.png" alt="Mountain View" style="width:50px;height:50px"><b>&nbsp;Data provided by Yelp!</b></p>
+        <p class="text-muted" align="center"><img src="http://fc03.deviantart.net/fs70/i/2013/218/c/9/firefox_new_icon__august_6_2013__by_eddygraphic-d6gynba.png" alt="Mountain View" style="width:50px;height:50px"><b> &nbsp; Firefox Recommended</b></p>
+    </div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Data Visualization Project</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type='text/javascript' >
+        var sets = [];
+    </script>
+    <script src="javascripts/drawCuisineBubbles.js"></script>
+    <script src="javascripts/venn.js"></script>
+    <link href="styles/c3.css" rel="stylesheet" type="text/css">
+    <script src="javascripts/c3.min.js"></script>
+    <script src="javascripts/spin.min.js"></script>
+    <script src="javascripts/spin.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">YelpFoodie</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="inactive"><a href="home.html">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Instructions<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <div class="container">
+                                <div class="form-group">
+                                    <h3 label-default="">Selecting a Location</h3>
+                                    <p>Click on a bubble with city name to select it. Upon your selection it will be inflated to mark your selection.</p>
+                                </div>
+                                <div class="form-group">
+                                    <h3 label-default="">Selecting Cuisines</h3>
+                                    <p>You may select up to four cuisines at any given time. Your selections are inflated to highlight them. You may deselect them by clicking on the bubble again. Selecting/Deselecting a cuisine will update a venn diagram in the bottom section.</p>
+                                </div>
+                                <div class="form-group">
+                                    <h3 label-default="">Venn Diagram</h3>
+                                    <p>Venn Diagram is completely interactive element. Hovering over a region will highlight it and tool-tip will display the names of overlapping region. Clicking on the highlighted region will display recommended restaurants as nodes. on ven diagram.</p>
+                                </div>
+                                <div class="form-group">
+                                    <h3 label-default="">Recommendations</h3>
+                                    <p>As stated above, recommended restaurants are displayed on venn diagram inside your selected region. This nodes are also interactive, hovering over them will display a restaurant name. Statistics of the restaurant can be displayed by clicking on these nodes.</p>
+                                </div>
+                                <div class="form-group">
+                                    <h3 label-default="">Selecting Attributes</h3>
+                                    <p>Three selected attributes on index page are displayed as buttons at the bottom of the page. Initially, all three attributes are selected by default. User may select one attribute if desired. </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="bs-example">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">1. Select a Location.</a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div id="location-svg-container" align="center">
+                    <script src = "javascripts/drawLocationBubbles.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">2. Select At Most 4 Cuisines.</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div id="cuisine-svg-container" align="center">
+                        <script src = "javascripts/drawCuisineBubbles.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="venn" align="center">
+    <script src="javascripts/drawVenn.js"></script>
+</div>
+<div>
+    <table width="100%">
+        <tr>
+            <td width="50%">
+                <div id="donut1"></div>
+            </td>
+            <td>
+                <div id="catList" align="center"></div>
+                <div style="width: 600px; display: table-cell;">
+                    <div align="center" class="btn-group-horizontal">
+                    <button align-text="center" type="button" class="btn btn-md" id="btn1">1</button>
+                    <button align-text="center" type="button" class="btn btn-md" id="btn2">2</button>
+                    <button align-text="center" type="button" class="btn btn-md" id="btn3">3</button>
+                        </div>
+                </div>
+            </td>
+            <td width="50%">
+                <div id="donut2"></div>
+            </td>
+        </tr>
+    </table>
+    <script src="javascripts/posNegDonut.js"></script>
+    <script src="javascripts/ratingDonut.js"></script>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted" align="center"><img src="http://coinbrief.net/wp-content/uploads/2014/05/yelp-icon-png.png" alt="Mountain View" style="width:50px;height:50px"><b>&nbsp;Data provided by Yelp!</b></p>
+        <p class="text-muted" align="center"><img src="http://fc03.deviantart.net/fs70/i/2013/218/c/9/firefox_new_icon__august_6_2013__by_eddygraphic-d6gynba.png" alt="Mountain View" style="width:50px;height:50px"><b> &nbsp; Firefox Recommended</b></p>
+    </div>
+</footer>
+</body>
+</html>

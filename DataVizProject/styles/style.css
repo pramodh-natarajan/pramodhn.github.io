@@ -1,0 +1,98 @@
+#cuisine-svg-container {
+     width: 1000px;
+     height: 150px;
+     border: dashed 1px black;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+#location-svg-container {
+    width: 1000px;
+    height: 150px;
+    border: dashed 1px black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    background-color: beige;
+    padding-top: 50px;
+}
+
+.footer {
+    padding-top: 50px;
+}
+
+.venntooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: 25px;
+    background: #333;
+    color: #fff;
+    padding: 2px;
+    border: 0px;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+#venn {
+    width: 1000px;
+    height: 1000px;
+    border: dashed 1px black;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    color:#FFFFFF;
+    position: relative;
+}
+
+#venn span {
+    position: relative;
+    top: 15px;
+}
+
+.yui3-dd-proxy {
+    text-align: left;
+}
+
+#donut1 {
+    width: 333px;
+    height: 333px;
+    float: right;
+    border: dashed 1px black;
+}
+
+#donut2 {
+    width: 334px;
+    height: 333px;
+    float: left;
+    border: dashed 1px black;
+}
+
+#catList {
+    width: 333px;
+    height: 300px;
+    border: dashed 1px black;
+}
+
+.bs-example{
+    margin: 20px;
+}
+
+#btn1 {
+    width: 100px;
+    background-color: #808080;
+}
+
+#btn2 {
+    width: 100px;
+    background-color: #808080;
+}
+
+#btn3 {
+    width: 100px;
+    background-color: #808080;
+}
