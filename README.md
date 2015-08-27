@@ -3,10 +3,15 @@ Repository for github.io
 
 # DataVizAssign
 
-- Contains files used for data visualization assignment (done in March 2015)
-- Created an interactive visualization using D3.js
+- Contains files used for data visualization assignment (done in March 2015).
+- Created an interactive visualization using D3.js.
 
 # DataVizProject
 
-- Containes files used for Yelp Foodie - Visual Recommender project (done in March-May 2015)
-- Used D3.js to create front end and used Python (with heroku) as backend
+- Containes files used for Yelp Foodie - Visual Recommender project (done in March-May 2015).
+- Used D3.js to create front end and used Python (with heroku) as backend.
+
+# DataVizLab
+
+- Contains files used in data viz lab exercise.
+- Learned how to use D3.js using this exercise.
