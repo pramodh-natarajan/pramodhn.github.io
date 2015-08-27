@@ -67,7 +67,7 @@
 
   var rect = [];
 
-  d3.tsv('01_01_2014-12_31_2014q[1].xls' , function (error, csv_data) {
+  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[1].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
@@ -81,7 +81,7 @@
       }
     });
   });
-  d3.tsv('01_01_2014-12_31_2014q[2].xls' , function (error, csv_data) {
+  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[2].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
@@ -95,7 +95,7 @@
       }
     });
   });  
-  d3.tsv('01_01_2014-12_31_2014q[3].xls' , function (error, csv_data) {
+  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[3].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
