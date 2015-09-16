@@ -67,7 +67,7 @@
 
   var rect = [];
 
-  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[1].xls' , function (error, csv_data) {
+  d3.tsv('http://pramodhn.github.io/interactive-viz-learn/01_01_2014-12_31_2014q[1].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
@@ -81,7 +81,7 @@
       }
     });
   });
-  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[2].xls' , function (error, csv_data) {
+  d3.tsv('http://pramodhn.github.io/interactive-viz-learn/01_01_2014-12_31_2014q[2].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
@@ -94,8 +94,8 @@
         ++data[data.length - 1].count;
       }
     });
-  });  
-  d3.tsv('http://pramodhn.github.io/DataVizLab/01_01_2014-12_31_2014q[3].xls' , function (error, csv_data) {
+  });
+  d3.tsv('http://pramodhn.github.io/interactive-viz-learn/01_01_2014-12_31_2014q[3].xls' , function (error, csv_data) {
     var curDate = null;
     csv_data.forEach(function(d){
       //var csv_qid = csv_data.question_id;
@@ -108,7 +108,7 @@
         ++data[data.length - 1].count;
       }
     });
-    
+
     dateExtent = d3.extent(data, function(d){
       return d.date;
     });
@@ -118,7 +118,7 @@
     axisWidth = itemSize*(dayFormat(dateExtent[1])-dayFormat(dateExtent[0])+1);
 
     //render axises
-    xAxis.scale(xAxisScale.range([0,axisWidth]).domain([dateExtent[0],dateExtent[1]]));  
+    xAxis.scale(xAxisScale.range([0,axisWidth]).domain([dateExtent[0],dateExtent[1]]));
     svg.append('g')
       .attr('transform','translate('+margin.left+','+margin.top+')')
       .attr('class','x axis')
@@ -146,10 +146,10 @@
       .orient('left')
       .ticks(5)
       .scale(hist1YAxisScale);
-  
+
   hist1XAxis.scale(xAxisScale.range([0,(cellSize*(dayFormat(dateExtent[1])-dayFormat(dateExtent[0])+1))])
-      .domain([dateExtent[0],dateExtent[1]]));       
-  
+      .domain([dateExtent[0],dateExtent[1]]));
+
   h1svg.append('g')
       .attr('transform','translate('+margin.left*2+','+(margin.top+(cellSize*15))+')')
       .attr('class','x axis')
@@ -167,7 +167,7 @@
   h1svg.append('g')
     .append('text')
       .text('Count on each day for selected hour')
-      .attr('transform','translate('+axisWidth/3+','+(cellSize*1)+')'); 
+      .attr('transform','translate('+axisWidth/3+','+(cellSize*1)+')');
 
   var hist2XAxis = d3.svg.axis()
       .orient('bottom')
@@ -180,10 +180,10 @@
       .orient('left')
       .ticks(5)
       .scale(hist2YAxisScale);
-  
+
   hist2XAxis.scale(xAxisScale.range([0,cellSize*24])
-      .domain([0,23]));       
-  
+      .domain([0,23]));
+
   h2svg.append('g')
       .attr('transform','translate('+margin.left*2+','+(margin.top+(cellSize*15))+')')
       .attr('class','x axis')
@@ -197,12 +197,12 @@
       .call(hist2YAxis)
     .append('text')
       .text('count')
-      .attr('transform','translate(-25,'+(cellSize*8)+') rotate(-90)'); 
+      .attr('transform','translate(-25,'+(cellSize*8)+') rotate(-90)');
 
   h2svg.append('g')
     .append('text')
       .text('Count for each hour on selected day')
-      .attr('transform','translate('+axisWidth/2+','+(cellSize*1)+')'); 
+      .attr('transform','translate('+axisWidth/2+','+(cellSize*1)+')');
     var i;
 
     for(i=0; i<(dayFormat(dateExtent[1])-dayFormat(dateExtent[0])+1); i++){
@@ -222,10 +222,10 @@
       .attr('x',function(d){
         return itemSize*(dayFormat(d.date)-dayOffset);
       })
-      .attr('y',function(d){            
+      .attr('y',function(d){
         return hourFormat(d.date)*itemSize;
       })
-      .attr('fill','#ffffff')      
+      .attr('fill','#ffffff')
       .on('click', function(d){
         selectedDay = dayFormat(d.date);
         selectedHour = hourFormat(d.date);
@@ -236,7 +236,7 @@
       .append('title')
       .text(function(d){
         return monthDayFormat(d.date)+' '+d.count;
-      });      
+      });
 
     renderColor();
   });
@@ -269,12 +269,12 @@
         return (d.count>=0);
       })
       .transition()
-      .delay(function(d){      
+      .delay(function(d){
         return (dayFormat(d.date)-dayOffset)*15;
       })
       .duration(500)
       .attrTween('fill',function(d,i,a){
-        //choose color dynamicly     
+        //choose color dynamicly
         if(renderByCount == true) {
           calibrationSize = (countExtent[1] - countExtent[0])/6;
           for(j=0; j<colorCalibration.length; j++){
@@ -292,7 +292,7 @@
             }
           }
         }
-        
+
         return d3.interpolate(a,colorID);
       });
   }
@@ -314,7 +314,7 @@
         } else if(dayFormat(d.date) == selectedDay) {
           histHours.push({date:d.date, count:d.count});
           return 0.5;
-        } 
+        }
         return 1;
       });
     var i,less;
@@ -345,7 +345,7 @@
 
       for(j=i-1; j>=0; j--) {
       histHours[j].date = dateExtent[0];
-      histHours[j].count = 0;        
+      histHours[j].count = 0;
       }
     }
 
@@ -417,7 +417,7 @@ function compareDays(a,b) {
     return 1;
   return 0;
 }
-  
+
   //extend frame height in `http://bl.ocks.org/`
-  d3.select(self.frameElement).style("height", "600px");  
+  d3.select(self.frameElement).style("height", "600px");
 })();

@@ -1,6 +1,6 @@
 
   // Open the file
-  d3.csv("http://pramodhn.github.io/DataVizAssign/top3-updated.csv", function(error, data) {
+  d3.csv("http://pramodhn.github.io/tennis/top3-updated.csv", function(error, data) {
     data.forEach(function(d) {
   });
 
@@ -20,8 +20,8 @@
   var svg = d3.select("body").append("svg").attr("align","center").attr("id","svgMain").attr("height", "506px").attr("width", "1000px").attr("style","background-image: url('img/Court.png')").call(tip);
   // Declare variables to be used in the program
   var net1,net2,first1,first2,return1,return2,netimage1,netimage2,returnimage1,returnimage2,firstimage1,firstimage2,playertext1,playertext2,roundnum,playername1,playername2,playername="",winlossimage,pauseButton;
-  
-  // Create a structure that will be used to store data based on player and year  
+
+  // Create a structure that will be used to store data based on player and year
   var responsestruct = [];
   for (var i = 0; i < 7; i++) {
       responsestruct.push({
@@ -82,7 +82,7 @@
   });
   // This function sets up the values for 'responsestruct' structure
   function visualize() {
-    
+
     netimage1.style("visibility","hidden");netimage2.style("visibility","hidden");firstimage1.style("visibility","hidden");firstimage2.style("visibility","hidden");returnimage1.style("visibility","hidden");returnimage2.style("visibility","hidden");playername1.style("visibility","hidden");playername2.style("visibility","hidden");roundnum.style("visibility","hidden");winlossimage.style("visibility","hidden");
     pauseButton = document.getElementById('pauseButton').hidden = true;
     if(selectedIndex == 0 && selectedYear == 0) { // When neither player nor year are chosen
@@ -100,9 +100,9 @@
             responsestruct[i].n1 = "";
             responsestruct[i].n2 = "";
             responsestruct[i].n2 = "";
-      }        
-      d3.select("#selection-comment").html("");      
-      for (i = 0; i < data.length; i++) { 
+      }
+      d3.select("#selection-comment").html("");
+      for (i = 0; i < data.length; i++) {
         if(data[i].year == selectedyear+""){ // If the chosen year matches
 
           // First manipulate all the percentage values
@@ -235,7 +235,7 @@
       histXAxis = d3.svg.axis().orient('bottom').ticks(11).scale(x0),
       histYAxisScale = d3.scale.linear().range([0,100]).domain([100,0]),
       histYAxis = d3.svg.axis().orient('left').ticks(5).scale(histYAxisScale);
-    
+
     hsvg.append('g').attr('transform','translate('+margin.left*2+','+(margin.top+100)+')').attr('class','x axis').call(histXAxis);
     hsvg.append('g').attr('transform','translate('+margin.left*2+','+(margin.top)+')').attr('class','y axis').call(histYAxis);
 
@@ -262,7 +262,7 @@
       .attr('width',20)
       .attr('x',function(d, i) {
         return (margin.left*2) + (i*60);
-      });            
+      });
     */
   }
   // This function returns the name of the round based on the input round number provided
@@ -300,7 +300,7 @@
     else if(selectedtennisball==6)
       return responsestruct[position].r2
   }
-  // This function gives an appropriate response title for tooltip  
+  // This function gives an appropriate response title for tooltip
   function printTooltipTitle() {
     if(selectedtennisball==1||selectedtennisball==2)
       return "First Serve Point";
